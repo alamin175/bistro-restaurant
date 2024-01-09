@@ -40,7 +40,7 @@ const Reviews = () => {
               />
               <p className="py-6">{review.details} </p>
               <h3 className="text-4xl font-bold text-orange-400">
-                {review.name}{" "}
+                {review.name}
               </h3>
             </div>
           </SwiperSlide>
