@@ -53,11 +53,7 @@ const ChefRecommends = () => {
                 <h2 className="card-title">Italian Pizza !</h2>
                 <p>If you are a Soup lover, you must try this item from us.</p>
                 <div className="card-actions justify-center">
-                  <button
-                    className="btn btn-outline btn-primary border-b-4 border-indigo-500
-                
-                "
-                  >
+                  <button className="btn btn-outline btn-primary border-b-4 border-indigo-500">
                     Add to cart
                   </button>
                 </div>

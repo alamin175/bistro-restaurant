@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTItle/SectionTitle";
 import useMenu from "../../../hooks/useMenu";
 import PopularItem from "../../Shared/PopularItem/PopularItem";
@@ -17,9 +18,11 @@ const MenuItem = () => {
         ))}
       </div>
       <div className="mx-auto  text-center">
-        <button className="btn mt-6 btn-outline b-o border-b-4 border-black">
-          View Full Menu
-        </button>
+        <Link to="/menu">
+          <button className="btn mt-6 btn-outline b-o border-b-4 border-black">
+            View Full Menu
+          </button>
+        </Link>
       </div>
     </div>
   );

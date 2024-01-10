@@ -22,32 +22,37 @@ const Menu = () => {
       </Helmet>
 
       <MenuCategory
+        title="menu"
         items={offered}
-        title="Today's offer"
-        subTitle="Don't Miss"
+        heading="Today's offer"
+        subHeading="Don't Miss"
         img={img1}
       ></MenuCategory>
       <MenuCategory
-        title="Delicious Dessert"
-        subTitle="Pick First "
+        title="dessert"
+        heading="Delicious Dessert"
+        subHeading="Pick First "
         items={desserts}
         img={dessert}
       ></MenuCategory>
       <MenuCategory
-        title="italiano's pizza"
-        subTitle="Only for pizza lover"
+        title="pizza"
+        heading="italiano's pizza"
+        subHeading="Only for pizza lover"
         items={pizzas}
         img={pizza}
       ></MenuCategory>
       <MenuCategory
-        title="Healthy Salad"
-        subTitle="Tasty & Healthy "
+        title="salad"
+        heading="Healthy Salad"
+        subHeading="Tasty & Healthy "
         items={salads}
         img={salad}
       ></MenuCategory>
       <MenuCategory
-        title="Special Soup"
-        subTitle="Yummy Soup"
+        title="soup"
+        heading="Special Soup"
+        subHeading="Yummy Soup"
         items={soups}
         img={soup}
       ></MenuCategory>
