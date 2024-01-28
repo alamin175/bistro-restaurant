@@ -9,8 +9,8 @@ const MenuItem = () => {
   return (
     <div>
       <SectionTitle
-        subTitle={"Check it out"}
-        title={"from our menu"}
+        subHeading={"Check it out"}
+        heading={"from our menu"}
       ></SectionTitle>
       <div className="md:w-10/12 grid md:grid-cols-2 gap-10 mx-auto mb-10">
         {popularItem.map((item) => (

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { UserContext } from "../../AuthContext/AuthContext";
-import { app } from "../../FirebaseConfig/firebase";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Register = () => {
   const { createUser, updateUserProfile, error, setError } =
@@ -24,32 +24,48 @@ const Register = () => {
         const user = currentUser.user;
         // console.log(user);
         updateUserProfile(name, photo).then(() => {
-          form.reset();
-          setError("");
-          console.log();
-          Swal.fire({
-            title: "User Created Successfully.",
-            showClass: {
-              popup: `
-              animate__animated
-              animate__fadeInUp
+          const saveUser = { name: name, email: email };
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              form.reset();
+              console.log();
+              setError("");
+              Swal.fire({
+                title: "User Created Successfully.",
+                showClass: {
+                  popup: `
+                    animate__animated
+                  animate__fadeInUp
                   animate__faster
                   `,
-            },
-            hideClass: {
-              popup: `
+                },
+                hideClass: {
+                  popup: `
                   animate__animated
                   animate__fadeOutDown
                   animate__faster
                   `,
-            },
-          });
-          navigate("/");
-          console.log(getAuth(app).currentUser);
+                },
+              });
+              navigate("/");
+              // console.log(getAuth(app).currentUser);
+            })
+            .catch((error) => {
+              // console.log(error.message);
+              setError(error.message);
+            });
         });
       })
       .catch((error) => {
-        // console.log(error.message);
+        console.log(error.message);
         setError(error.message);
       });
   };
@@ -128,6 +144,7 @@ const Register = () => {
                   value="Register"
                 />
               </div>
+              <SocialLogin></SocialLogin>
             </form>
           </div>
           <div className="text-center lg:text-left">

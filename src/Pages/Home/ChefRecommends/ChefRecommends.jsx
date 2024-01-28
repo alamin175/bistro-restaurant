@@ -11,8 +11,8 @@ const ChefRecommends = () => {
       <div className="flex items-center justify-center">
         <div className="mx-auto">
           <SectionTitle
-            subTitle={"Should Try"}
-            title={"chef recommends"}
+            subHeading={"Should Try"}
+            heading={"chef recommends"}
           ></SectionTitle>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:ml-8  md:8 md:w-11/12 mx-auto my-4">
             <div className="card w-96 bg-base-100 m-4 shadow-xl">

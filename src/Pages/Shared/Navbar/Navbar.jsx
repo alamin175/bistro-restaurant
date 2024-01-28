@@ -18,9 +18,7 @@ const Navbar = () => {
       <li>
         <Link to="/order/salad"> Order</Link>
       </li>
-      <li>
-        <Link to="/cart">Cart</Link>
-      </li>
+
       <li>
         <Link to="/dashboard/mycart">
           <button className="btn my-auto">

@@ -11,7 +11,7 @@ const FoodCard = ({ item }) => {
   const [, refetch] = useCart();
   const { name, price, image, recipe, _id } = item;
   const handleAddToCart = (items) => {
-    console.log(items);
+    // console.log(items);
     const cartItem = {
       cartId: _id,
       email: user?.email,

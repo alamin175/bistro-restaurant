@@ -20,8 +20,8 @@ const Reviews = () => {
   return (
     <div>
       <SectionTitle
-        title={"testimonials"}
-        subTitle={"What Our Clients Say"}
+        heading={"testimonials"}
+        subHeading={"What Our Clients Say"}
       ></SectionTitle>
       <Swiper
         navigation={true}

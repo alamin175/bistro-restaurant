@@ -13,7 +13,7 @@ const PrivateRoute = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgressValue((prevValue) => {
-        if (prevValue < 70) {
+        if (prevValue < 100) {
           return prevValue + 1; // Increment the progress value
         }
         clearInterval(interval); // Stop the interval when reaching the desired value

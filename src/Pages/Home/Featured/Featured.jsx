@@ -7,8 +7,8 @@ const Featured = () => {
     <>
       <div className="featured-container mt-16 my-10 pt-10 text-white">
         <SectionTitle
-          title={"from our menu"}
-          subTitle={"Check it Out"}
+          heading={"from our menu"}
+          subHeading={"Check it Out"}
         ></SectionTitle>
         {/* <div className="absolute inset-0 bg-black opacity-50 bg-overlay"></div> */}
 

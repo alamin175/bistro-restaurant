@@ -9,6 +9,7 @@ import {
 } from "react-simple-captcha";
 import Swal from "sweetalert2";
 import { UserContext } from "../../AuthContext/AuthContext";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn, error, setError } = useContext(UserContext);
@@ -147,6 +148,7 @@ const Login = () => {
                   value="Login"
                 />
               </div>
+              <SocialLogin></SocialLogin>
             </form>
           </div>
           <div className="text-center lg:text-left">

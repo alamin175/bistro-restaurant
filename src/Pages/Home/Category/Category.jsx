@@ -13,8 +13,8 @@ const Category = () => {
   return (
     <section>
       <SectionTitle
-        subTitle="From 11am to 10pm"
-        title="Order Now"
+        subHeading="From 11am to 10pm"
+        heading="Order Now"
       ></SectionTitle>
       <div className="my-12">
         <Swiper

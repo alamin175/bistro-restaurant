@@ -6,7 +6,7 @@ import useCart from "../../../hooks/useCart";
 const MyCart = () => {
   const [cart, refetch] = useCart();
   // reduce function using to get total price from a array like object .
-  const totalPrice = cart.reduce((sum, item) => item.price + sum, 0);
+  const totalPrice = cart.reduce((sum, item) => item?.price + sum, 0);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -77,7 +77,7 @@ const MyCart = () => {
                   <td>
                     <button
                       onClick={() => handleDelete(item._id)}
-                      className="btn bg-red-600 text-white px-3 hover:text-black"
+                      className="btn bg-red-600 text-white px-3  hover:bg-red-800"
                     >
                       <FaTrashAlt></FaTrashAlt>
                     </button>
