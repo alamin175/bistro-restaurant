@@ -15,3 +15,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+
+// VITE_APIKEY=AIzaSyBT0djzM3Z0tjbBehdKfBClhlBxBve1L_0
+// VITE_AUTHDOMAIN=bistro-restaurant-f5a61.firebaseapp.com
+// VITE_PROJECTID=bistro-restaurant-f5a61
+// VITE_STORAGEBUCKET=bistro-restaurant-f5a61.appspot.com
+// VITE_MESSAGINGSENDERID=390627977767
+// VITE_APPID=1:390627977767:web:19589d015758cfe3ee7c02
