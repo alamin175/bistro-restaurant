@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
 import Swal from "sweetalert2";
@@ -31,9 +30,10 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        navigate(from, { replace: true });
         setError("");
         form.reset();
+        // navigate(from, { replace: true });
+        navigate("/");
       })
       .catch((error) => {
         // console.log(error.message);

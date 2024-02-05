@@ -11,15 +11,16 @@ import {
 } from "firebase/auth";
 import { app } from "../FirebaseConfig/firebase";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const UserContext = createContext(null);
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -42,7 +43,7 @@ const AuthContext = ({ children }) => {
   };
 
   const updateUserProfile = (name, photo) => {
-    setLoading(false);
+    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -59,10 +60,11 @@ const AuthContext = ({ children }) => {
             localStorage.setItem("access-token", data.data.token);
           })
           .catch((error) => console.log(error.message));
-        setLoading(false);
       } else {
         localStorage.removeItem("access-token");
       }
+
+      setLoading(false);
     });
     return () => {
       return unsubscribe;
