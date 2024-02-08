@@ -3,17 +3,23 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTItle/SectionTitle";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const UpdateMenu = () => {
+  const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
   const { register, handleSubmit, reset } = useForm();
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
   const { id } = useParams();
-  console.log(id);
+  //   console.log(id);
 
-  const { data: item } = useQuery({
-    queryKey: ["item"],
+  const { data: item, refetch } = useQuery({
+    queryKey: ["item", id],
     queryFn: async () => {
       const res = await axiosSecure.get(
         `/dashboard/manageItems/updateMenu/${id}`
@@ -22,10 +28,9 @@ const UpdateMenu = () => {
       //   console.log(res);
     },
   });
-  console.log(item);
+  //   console.log(item);
   const onSubmit = async (data) => {
     console.log(data);
-
     // send image url to imgbb and hosting
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -42,13 +47,15 @@ const UpdateMenu = () => {
         category: data.category,
         price: parseFloat(data.price),
       };
-      const menuRes = await axiosSecure.patch("/menu", menuItem);
-      if (menuRes.data.insertedId) {
+      const menuRes = await axiosSecure.patch(`/updateMenu/${id}`, menuItem);
+      console.log(menuRes.data);
+      if (menuRes.data.modifiedCount > 0) {
+        refetch();
         reset();
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: `${data.name} is added on the menu`,
+          title: `${data.name} is updated successfully`,
           showConfirmButton: false,
           timer: 1500,
         });
