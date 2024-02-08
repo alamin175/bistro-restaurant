@@ -52,7 +52,7 @@ const axiosSecure = axios.create({
 });
 const useAxiosSecure = () => {
   const navigate = useNavigate();
-  const { logOut } = useContext(UserContext);
+  const { logOut, loading } = useContext(UserContext);
 
   // request interceptor to add authorization header for every secure call to the api
   axiosSecure.interceptors.request.use(
@@ -63,6 +63,7 @@ const useAxiosSecure = () => {
       // Check if the token is present and not expired
       if (!token) {
         // Handle case when token is missing
+        loading(true);
         console.error("Access token is missing. Redirecting to login.");
         navigate("/login");
         return Promise.reject("Access token is missing.");
