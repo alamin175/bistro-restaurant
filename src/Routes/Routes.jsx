@@ -6,6 +6,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import MangeItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import UpdateMenu from "../Pages/Dashboard/UpdateMenu/UpdateMenu";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "mycart",
         element: <MyCart></MyCart>,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
       },
       {
         path: "payment",
