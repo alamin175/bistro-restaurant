@@ -12,7 +12,7 @@ const PaymentHistory = () => {
     queryKey: ["payments", user.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/payments/${user.email}`);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     },
   });
@@ -45,7 +45,7 @@ const PaymentHistory = () => {
                   <td>{index + 1} </td>
                   <td className="text-right">${item.price} </td>
                   <td className="text-center">{item.transactionId} </td>
-                  <td>{item.status} </td>
+                  <td className="text-red-600">{item.status} </td>
                 </tr>
               ))}
             </tbody>

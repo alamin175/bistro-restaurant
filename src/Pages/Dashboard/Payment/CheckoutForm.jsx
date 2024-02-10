@@ -12,7 +12,7 @@ const CheckoutForm = () => {
   const [error, setError] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const axiosSecure = useAxiosSecure();
-  const [cart] = useCart();
+  const [cart, refetch] = useCart();
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [clientSecret, SetClientSecret] = useState("");
@@ -24,7 +24,7 @@ const CheckoutForm = () => {
         .post("/create-payment-intent", { price: totalPrice })
         .then((res) => {
           SetClientSecret(res.data.clientSecret);
-          console.log(res.data);
+          // console.log(res.data);
         });
     }
   }, [axiosSecure, totalPrice]);
@@ -47,7 +47,7 @@ const CheckoutForm = () => {
       console.log("some error are occured", error);
     } else {
       setError("");
-      console.log(paymentMethod);
+      // console.log(paymentMethod);
     }
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -65,7 +65,7 @@ const CheckoutForm = () => {
       setTransactionId("");
     }
     if (paymentIntent.status === "succeeded") {
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
       setTransactionId(paymentIntent.id);
       setError("");
       const payment = {
@@ -74,13 +74,14 @@ const CheckoutForm = () => {
         date: new Date() /* utc convert, use moment js to utc for international time */,
         transactionId: paymentIntent.id,
         cartIds: cart.map((item) => item._id),
-        menuCartId: cart.map((item) => item.cartId),
+        menuItemIds: cart.map((item) => item.cartId),
         status: "pending",
       };
       const res = await axiosSecure.post("/payments", payment);
-      console.log(res);
+      // console.log(res);
 
       if (res.data.paymentResult.insertedId) {
+        refetch();
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -90,7 +91,7 @@ const CheckoutForm = () => {
         });
         navigate("/dashboard/paymentHistory");
       }
-      console.log(res.data);
+      // console.log(res.data);
     }
   };
 

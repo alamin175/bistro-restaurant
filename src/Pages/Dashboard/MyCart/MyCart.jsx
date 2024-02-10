@@ -7,8 +7,13 @@ import useCart from "../../../hooks/useCart";
 const MyCart = () => {
   const [cart, refetch] = useCart();
   // reduce function using to get total price from a array like object .
-  const totalPrice = cart.reduce((sum, item) => item?.price + sum, 0);
-
+  // const totalPrice = cart
+  //   .reduce((sum, item) => parseFloat(item?.price) + sum, 0)
+  //   .toFixed(2);
+  const price = cart.reduce((sum, item) => sum + item?.price, 0);
+  const floatPrice = parseFloat(price).toFixed(2);
+  const totalPrice = parseFloat(floatPrice);
+  console.log(totalPrice);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

@@ -10,8 +10,8 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { app } from "../FirebaseConfig/firebase";
+import useAxiosPublic from ".././hooks/useAxiosPublic";
 import axios from "axios";
-import Swal from "sweetalert2";
 
 export const UserContext = createContext(null);
 const auth = getAuth(app);
@@ -20,6 +20,7 @@ const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const axiosPublic = useAxiosPublic();
   const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
@@ -65,6 +66,18 @@ const AuthContext = ({ children }) => {
       }
 
       setLoading(false);
+      // if (currentUser) {
+      //   const userInfo = { email: currentUser.email };
+      //   axiosPublic.post("/jwt", userInfo).then((res) => {
+      //     if (res.data.token) {
+      //       localStorage.setItem("access-token", res.data.token);
+      //       setLoading(false);
+      //     } else {
+      //       localStorage.removeItem("access-token");
+      //       setLoading(false);
+      //     }
+      //   });
+      // }
     });
     return () => {
       return unsubscribe;
