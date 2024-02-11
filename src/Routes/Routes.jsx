@@ -4,6 +4,7 @@ import Main from "../Layout/Main";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import Bookings from "../Pages/Dashboard/Bookings/Bookings";
 import MangeItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
@@ -77,6 +78,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AdminHome></AdminHome>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "bookings",
+        element: (
+          <AdminRoute>
+            <Bookings></Bookings>
           </AdminRoute>
         ),
       },

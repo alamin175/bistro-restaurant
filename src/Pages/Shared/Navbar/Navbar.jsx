@@ -28,20 +28,7 @@ const Navbar = () => {
         </Link>
       </li>
 
-      {user ? (
-        <>
-          <span className="mt-2 mr-2">{user?.displayName} </span>
-          <button onClick={logOut} className="btn btn-outline text-white">
-            Logout
-          </button>{" "}
-        </>
-      ) : (
-        <>
-          <li>
-            <Link to="/login"> Login</Link>
-          </li>
-        </>
-      )}
+      {<span className="mt-2 mr-2 read-only:">{user?.displayName} </span>}
     </>
   );
   return (
@@ -67,13 +54,15 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-yellow-500 text-black   rounded-box w-52"
             >
               {navOption}
             </ul>
           </div>
           <Link to="/">
-            <a className="btn btn-ghost text-xl">Restaurant</a>
+            <a className="btn btn-ghost text-xl uppercase hover:text-black hover:bg-yellow-500">
+              bistro boss
+            </a>
           </Link>
         </div>
         <div className="navbar-center items-center mt-0 hidden lg:flex">
@@ -82,7 +71,22 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          {user ? (
+            <>
+              <button
+                onClick={logOut}
+                className="btn btn-outline text-white  hover:text-black hover:bg-yellow-500"
+              >
+                Logout
+              </button>{" "}
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/login"> Login</Link>
+              </li>
+            </>
+          )}
         </div>
       </div>
     </div>

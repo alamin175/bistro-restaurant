@@ -14,7 +14,7 @@
 //       refetch;
 //       // console.log(user.email);
 //       const res = await fetch(
-//         `http://localhost:5000/carts?email=${user?.email}`,
+//         `https://bistro-restaurant-server-chi.vercel.app/carts?email=${user?.email}`,
 //         {
 //           headers: {
 //             authorization: `Bearer ${token}`,
@@ -51,7 +51,7 @@
 //       try {
 //         // console.log(user.email);
 //         const res = await fetch(
-//           `http://localhost:5000/carts?email=${user?.email}`,
+//           `https://bistro-restaurant-server-chi.vercel.app/carts?email=${user?.email}`,
 //           {
 //             headers: {
 //               authorization: `Bearer ${token}`,

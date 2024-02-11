@@ -20,7 +20,7 @@ const FoodCard = ({ item }) => {
       price,
     };
     if (user && user.email) {
-      fetch("http://localhost:5000/carts", {
+      fetch("https://bistro-restaurant-server-chi.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

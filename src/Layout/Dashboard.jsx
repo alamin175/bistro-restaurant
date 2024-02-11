@@ -21,8 +21,12 @@ const Dashboard = () => {
 
   return (
     <div className="drawer lg:drawer-open ">
-      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col mt-8 items-center">
+      <input
+        id="my-drawer-2"
+        type="checkbox"
+        className="drawer-toggle bg-[#D1A054]"
+      />
+      <div className="drawer-content flex flex-col mt-8 items-center ">
         <Outlet></Outlet>
         {/*className for center  items-center justify-center */}
         {/* Page content here */}
@@ -33,13 +37,13 @@ const Dashboard = () => {
           Open drawer
         </label>
       </div>
-      <div className="drawer-side bg-[#D1A054] ">
+      <div className="drawer-side  ">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full">
+        <ul className="menu p-4 w-80 min-h-full text-2xl bg-[#D1A054]">
           {/* Sidebar content here */}
 
           {isAdmin ? (
@@ -60,7 +64,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
+                <NavLink to="/dashboard/bookings">
                   <FaBook></FaBook> Manage Bookings
                 </NavLink>
               </li>

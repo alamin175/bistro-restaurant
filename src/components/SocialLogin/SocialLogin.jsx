@@ -16,7 +16,7 @@ const SocialLogin = () => {
         const name = user.displayName;
         const email = user.email;
         const saveUser = { name: name, email: email };
-        fetch("http://localhost:5000/users", {
+        fetch("https://bistro-restaurant-server-chi.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

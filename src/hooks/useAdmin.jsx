@@ -15,7 +15,7 @@ import useAxiosSecure from "./useAxiosSecure";
 //     queryKey: ["isAdmin", user?.email],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `http://localhost:5000/users/admin/${user?.email}`,
+//         `https://bistro-restaurant-server-chi.vercel.app/users/admin/${user?.email}`,
 //         {
 //           headers: {
 //             authorization: `Bearer ${token}`,

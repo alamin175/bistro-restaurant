@@ -7,7 +7,7 @@
 //   const navigate = useNavigate();
 //   const { logOut } = useContext(UserContext);
 //   const axiosSecure = axios.create({
-//     baseURL: "http://localhost:5000",
+//     baseURL: "https://bistro-restaurant-server-chi.vercel.app",
 //   });
 
 //   // request interceptor to add authorization header for every secure call to teh api
@@ -48,7 +48,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../AuthContext/AuthContext";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://bistro-restaurant-server-chi.vercel.app",
 });
 const useAxiosSecure = () => {
   const navigate = useNavigate();
