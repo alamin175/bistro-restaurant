@@ -12,7 +12,7 @@ const Featured = () => {
         ></SectionTitle>
         {/* <div className="absolute inset-0 bg-black opacity-50 bg-overlay"></div> */}
 
-        <div className="md:flex  items-center justify-center pb-20 pt-12 px-36 mx-auto">
+        <div className="md:flex  items-center justify-center pb-20 pt-12 px-5 md:px-36 mx-auto">
           <div>
             <img src={img} alt="" />
           </div>

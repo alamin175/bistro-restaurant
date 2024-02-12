@@ -47,9 +47,11 @@ const MyCart = () => {
     <>
       <SectionTitle heading="wanna add ?" subHeading="My Cart"></SectionTitle>
       <div className="w-full ">
-        <div className="flex uppercase h-[60px] items-center justify-center ">
-          <h1 className="text-3xl mr-11">Added Items : {cart.length} </h1>
-          <h1 className="text-3xl mr-11">Total Price : ${totalPrice} </h1>
+        <div className="flex uppercase h-[60px] items-center justify-center mx-4">
+          <h1 className="md:text-3xl mr:10 md:mr-11">
+            Added Items : {cart.length}{" "}
+          </h1>
+          <h1 className="md:text-3xl md:mr-11">Total Price : ${totalPrice} </h1>
           {cart.length ? (
             <Link to="/dashboard/payment">
               <button className="btn btn-warning btn-sm">Pay Now</button>
