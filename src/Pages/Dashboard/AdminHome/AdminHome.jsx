@@ -96,53 +96,62 @@ const AdminHome = () => {
   });
 
   return (
-    <div>
-      <h1 className="text-4xl mb-4 ">
+    <div className="w-11/12">
+      <h1 className="text-2xl md:text-4xl mb-4 ">
         Welcome!!
         <span className="text-yellow-500">
           {user.displayName ? user.displayName : "Back"}
         </span>
       </h1>
 
-      <div className="stats shadow">
-        <div className="stat">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5 lg:grid-cols-4">
+        <div className="stat border-2 rounded-lg">
           <div className="stat-figure text-secondary">
             <FaDollarSign className="text-3xl"></FaDollarSign>
           </div>
           <div className="stat-title">Revenue </div>
-          <div className="stat-value">${adminStats.revenue}</div>
+          <div className="font-bold text-2xl lg:stat-value">
+            ${adminStats.revenue}
+          </div>
           <div className="stat-desc">Jan 1st - Feb 1st</div>
         </div>
 
-        <div className="stat">
+        <div className="stat border-2 rounded-lg">
           <div className="stat-figure text-secondary">
             <FaUsers className="text-3xl"></FaUsers>
           </div>
           <div className="stat-title">Total Users</div>
-          <div className="stat-value">{adminStats.users}</div>
+          <div className="font-bold text-2xl lg:stat-value">
+            {adminStats.users}
+          </div>
           <div className="stat-desc">↗︎ 400 (22%)</div>
         </div>
 
-        <div className="stat">
+        <div className="stat border-2 rounded-lg">
           <div className="stat-figure text-secondary">
             <FaAddressBook className="text-3xl"></FaAddressBook>
           </div>
           <div className="stat-title">Total Menu</div>
-          <div className="stat-value">{adminStats.menu} </div>
+          <div className="font-bold text-2xl lg:stat-value">
+            {adminStats.menu}{" "}
+          </div>
           <div className="stat-desc">↘︎ 90 (14%)</div>
         </div>
-        <div className="stat">
+        <div className="stat border-2 rounded-lg ">
           <div className="stat-figure text-secondary">
-            <FaShippingFast className="text-3xl"></FaShippingFast>
+            <FaShippingFast className="text-3xl -ml-4"></FaShippingFast>
           </div>
           <div className="stat-title">Total Orders</div>
-          <div className="stat-value">{adminStats.orders} </div>
+          <div className="font-bold text-2xl lg:stat-value">
+            {adminStats.orders}{" "}
+          </div>
           <div className="stat-desc">↘︎ 90 (14%)</div>
         </div>
       </div>
-      <div className="flex">
-        <div>
+      <div className="md:flex">
+        <div className="">
           <BarChart
+            className="w-11/12"
             width={500}
             height={300}
             data={categoryData}
