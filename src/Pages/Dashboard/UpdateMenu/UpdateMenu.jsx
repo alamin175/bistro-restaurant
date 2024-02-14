@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 import { useParams } from "react-router-dom";
@@ -64,6 +65,9 @@ const UpdateMenu = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Update Menu-Bistro Boss</title>
+      </Helmet>
       <SectionTitle
         heading="update menu"
         subHeading="Update menu with your requirement"

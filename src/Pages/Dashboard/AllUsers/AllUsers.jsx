@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -59,6 +60,9 @@ const AllUsers = () => {
   };
   return (
     <div className="w-11/12">
+      <Helmet>
+        <title>All Users-Bistro Boss</title>
+      </Helmet>
       <h1 className="text-4xl text-center font-bold">
         Total Users : {users.length}{" "}
       </h1>

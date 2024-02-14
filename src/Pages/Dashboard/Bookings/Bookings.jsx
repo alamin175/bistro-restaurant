@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import SectionTitle from "../../../components/SectionTItle/SectionTitle";
 
 const Bookings = () => {
   return (
     <>
+      <Helmet>
+        <title>Bookings-Bistro Boss</title>
+      </Helmet>
       <SectionTitle
         heading="manage bookings"
         subHeading="Some Bookings "

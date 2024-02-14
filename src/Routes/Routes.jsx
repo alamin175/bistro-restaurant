@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
+import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import Bookings from "../Pages/Dashboard/Bookings/Bookings";
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
             <AddItems></AddItems>
           </AdminRoute>
         ),
+      },
+      {
+        path: "addReview",
+        element: <AddReview></AddReview>,
       },
       {
         path: "manageItems",

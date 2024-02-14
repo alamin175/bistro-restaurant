@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
 import { UserContext } from "../../../AuthContext/AuthContext";
 import SectionTitle from "../../../components/SectionTItle/SectionTitle";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -19,6 +20,9 @@ const PaymentHistory = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Payment History-Bistro Boss</title>
+      </Helmet>
       <SectionTitle
         heading="payment history"
         subHeading="Your Payment History"

@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { MdRateReview } from "react-icons/md";
 import {
   FaBook,
   FaCalendarAlt,
@@ -81,14 +82,19 @@ const Dashboard = () => {
                   <FaHome></FaHome>User Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/dashboard/reservation">
                   <FaCalendarAlt></FaCalendarAlt>Reservation
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/dashboard/paymentHistory">
                   <FaWallet></FaWallet> Payment History
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/addReview">
+                  <MdRateReview></MdRateReview> Add Review
                 </NavLink>
               </li>
               <li>

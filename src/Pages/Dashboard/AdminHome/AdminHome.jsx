@@ -22,6 +22,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { Helmet } from "react-helmet";
 
 const AdminHome = () => {
   const { user } = useContext(UserContext);
@@ -97,6 +98,9 @@ const AdminHome = () => {
 
   return (
     <div className="w-11/12">
+      <Helmet>
+        <title>Admin Home-Bistro Boss</title>
+      </Helmet>
       <h1 className="text-2xl md:text-4xl mb-4 ">
         Welcome!!
         <span className="text-yellow-500">

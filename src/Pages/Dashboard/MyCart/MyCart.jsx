@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -13,7 +14,7 @@ const MyCart = () => {
   const price = cart.reduce((sum, item) => sum + item?.price, 0);
   const floatPrice = parseFloat(price).toFixed(2);
   const totalPrice = parseFloat(floatPrice);
-  console.log(totalPrice);
+  // console.log(totalPrice);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +46,9 @@ const MyCart = () => {
 
   return (
     <>
+      <Helmet>
+        <title>My Cart-Bistro Boss</title>
+      </Helmet>
       <SectionTitle heading="wanna add ?" subHeading="My Cart"></SectionTitle>
       <div className="w-full ">
         <div className="flex uppercase h-[60px] items-center justify-center mx-4">

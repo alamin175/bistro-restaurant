@@ -4,6 +4,7 @@ import SectionTitle from "../../../components/SectionTItle/SectionTitle";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MangeItems = () => {
   const [menu, , refetch] = useMenu();
@@ -59,6 +60,9 @@ const MangeItems = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Manage Items-Bistro Boss</title>
+      </Helmet>
       <SectionTitle
         heading="manage all items"
         subHeading="Hurry Up"
@@ -115,12 +119,12 @@ const MangeItems = () => {
             ))}
           </tbody>
         </table>
-        <button
+        {/* <button
           onClick={() => handleDeleteAll()}
           className="btn text-xl p-2 bg-red-600 text-white px-3 hover:bg-red-700"
         >
           <FaTrashAlt></FaTrashAlt>
-        </button>
+        </button> */}
       </div>
     </>
   );
